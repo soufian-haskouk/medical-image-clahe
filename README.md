@@ -20,6 +20,13 @@ Cette application interactive permet d’améliorer le contraste d’images méd
 L’objectif principal est d’obtenir une meilleure visibilité des détails anatomiques tout en limitant l’amplification du bruit, grâce notamment à une **suggestion automatique intelligente (Smart CLAHE)**.
 
 ---
+## 📸 Aperçu de l'Application
+
+### 🖥️ Interface & Comparaison des Résultats
+| Interface & Configuration | Résultats (Original vs HE vs CLAHE) |
+| :---: | :---: |
+| ![Interface CLAHE](1.png) | ![Comparaison](2.png) |
+
 
 ## 🌟 Fonctionnalités Principales
 
