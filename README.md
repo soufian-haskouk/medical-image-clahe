@@ -1,25 +1,36 @@
-# 🔬 Amélioration d'Images Médicales par la Technique CLAHE
+![Status](https://img.shields.io/badge/Status-Completed-success)
+![Version](https://img.shields.io/badge/Release-v1.0.0-blue)
+![Master](https://img.shields.io/badge/Master-SIDI-orange)
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?logo=opencv&logoColor=white)
 
-> **Application Interactive sous Python & Streamlit avec Évaluation Quantitative (MSE, PSNR, SSIM)**
+# 🔬 Amélioration d'Images Médicales avec CLAHE
+
+> **Application Interactive sous Python & Streamlit pour l'amélioration du contraste des images médicales avec Évaluation Quantitative (MSE, PSNR, SSIM)**
 
 ---
 
-## 📌 Présentation 
+## 📌 Présentation du Projet
 
-Il explore et démontre l'efficacité de la technique **CLAHE** (*Contrast Limited Adaptive Histogram Equalization*) par rapport à l'égalisation d'histogramme classique (HE) pour le rehaussement des radiographies et des IRM, tout en intégrant une **suggestion automatique intelligente (Smart CLAHE)** basée sur l'analyse statistique de l'image.
+Cette application interactive permet d’améliorer le contraste d’images médicales (telles que les radiographies, IRM ou scanners) en comparant plusieurs techniques de traitement d’image :
+- **Égalisation d’histogramme classique (HE)**
+- **CLAHE** (*Contrast Limited Adaptive Histogram Equalization*)
+
+L’objectif principal est d’obtenir une meilleure visibilité des détails anatomiques tout en limitant l’amplification du bruit, grâce notamment à une **suggestion automatique intelligente (Smart CLAHE)**.
 
 ---
 
 ## 🌟 Fonctionnalités Principales
 
-* **🖥️ Interface Web Interactive (Streamlit) :** Permet de charger facilement une image médicale (X-ray, IRM) et de régler dynamiquement les paramètres en temps réel.
-* **💡 Suggestion Intelligente (IA) :** Analyse automatique de l'écart-type de l'image pour proposer les valeurs idéales de *Clip Limit* et de *Tile Grid Size*.
-* **📊 Évaluation Quantitative Avancée :** Calcul instantané de trois métriques clés de qualité :
+* **🖥️ Interface Web Interactive (Streamlit) :** Permet de charger des images médicales et de régler dynamiquement les paramètres en temps réel.
+* **💡 Suggestion Intelligente (IA) :** Analyse statistique de l'image (écart-type) pour recommander les valeurs optimales de *Clip Limit* et de *Tile Grid Size*.
+* **📊 Évaluation Quantitative Avancée :** Calcul instantané de trois métriques clés :
   * **MSE** (Erreur Quadratique Moyenne)
   * **PSNR** (Rapport Signal sur Bruit de Crête en dB)
   * **SSIM** (Fidélité et Similarité Structurelle)
 * **📈 Visualisation Graphique :** Affichage des histogrammes de distribution des pixels avec superposition de la courbe cumulative (CDF).
-* **💾 Exportation du Résultat :** Téléchargement direct de l'image traitée au format PNG.
+* **💾 Exportation du Résultat :** Téléchargement direct de l'image traitée.
 
 ---
 
@@ -29,16 +40,20 @@ Il explore et démontre l'efficacité de la technique **CLAHE** (*Contrast Limit
 | :--- | :--- |
 | **Python** | Langage de programmation principal |
 | **Streamlit** | Création de l'interface utilisateur web |
-| **OpenCV (`cv2`)** | Traitement d'images, application des filtres HE et CLAHE |
-| **NumPy & Matplotlib** | Calculs numériques, statistiques et tracés des histogrammes |
+| **OpenCV (`cv2`)** | Traitement d'images et application des filtres HE/CLAHE |
+| **NumPy & Matplotlib** | Calculs numériques et tracés des histogrammes |
 | **scikit-image** | Calcul précis du score de similarité structurelle (SSIM) |
 
 ---
 
-## ⚙️ Installation et Exécution Locale
+## 📂 Structure du Projet
 
-Suivez ces étapes pour lancer l'application sur votre machine :
+* Des exemples d'images médicales pour les tests sont disponibles dans le dossier `image_pour_test/`.
 
-1. **Cloner le dépôt ou placer les fichiers dans un dossier :**
+---
+
+## ⚙️ Installation et Exécution
+
+1. **Installer les bibliothèques nécessaires avec :**
    ```bash
-   cd medical-image-clahe
+   pip install streamlit opencv-python numpy matplotlib scikit-image
