@@ -64,3 +64,7 @@ L’objectif principal est d’obtenir une meilleure visibilité des détails an
 1. **Installer les bibliothèques nécessaires avec :**
    ```bash
    pip install streamlit opencv-python numpy matplotlib scikit-image
+2.
+Lancer le projet avec la commande suivante :
+
+streamlit run Application.py
