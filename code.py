@@ -28,7 +28,6 @@ def plot_styled_histogram(img, title):
 
     fig, ax1 = plt.subplots(figsize=(5, 3))
     
-    # ملء المساحة تحت الهيستوجرام باللون الأزرق
     ax1.fill_between(range(256), hist, color='#1f77b4', alpha=0.7) 
     ax1.plot(range(256), hist, color='darkblue', linewidth=0.5) # خط حدود خفيف
     
@@ -54,7 +53,6 @@ if uploaded_file is not None:
     file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
     img_orig = cv2.imdecode(file_bytes, cv2.IMREAD_GRAYSCALE)
 
-    # اقتراحات الذكاء الاصطناعي
     auto_clip, auto_grid = get_auto_params(img_orig)
     st.sidebar.info(f"💡 Suggestion IA : Clip={auto_clip}, Grid={auto_grid}")
 
@@ -62,15 +60,14 @@ if uploaded_file is not None:
     clip_limit = st.sidebar.slider("Clip Limit", 1.0, 5.0, auto_clip)
     grid_size = st.sidebar.slider("Tile Grid Size", 4, 16, auto_grid)
 
-    # المعالجة
     img_he = cv2.equalizeHist(img_orig)
     clahe_obj = cv2.createCLAHE(clipLimit=clip_limit, tileGridSize=(grid_size, grid_size))
     img_clahe = clahe_obj.apply(img_orig)
 
-    # حساب المقاييس (تم إصلاح NameError هنا)
+    # 
     mse_val, psnr_val, ssim_val = calculate_metrics(img_orig, img_clahe)
 
-    # عرض الصور
+    # 
     st.divider()
     col1, col2, col3 = st.columns(3)
     with col1:
@@ -83,7 +80,7 @@ if uploaded_file is not None:
         st.subheader("Résultat CLAHE")
         st.image(img_clahe, use_container_width=True)
 
-    # عرض المقاييس الرقمية (الآن ستعمل بدون خطأ)
+    # 
     st.divider()
     st.subheader("📊 Évaluation Quantitative (Metrics)")
     m1, m2, m3 = st.columns(3)
@@ -93,7 +90,7 @@ if uploaded_file is not None:
     
     st.caption("Note: SSIM proche de 1 signifie une préservation parfaite des structures anatomiques.")
 
-    # عرض الهيستوجرامات الملونة بالكامل
+    # hist
     st.divider()
     h_col1, h_col2, h_col3 = st.columns(3)
     with h_col1:
