@@ -4,8 +4,7 @@
 
 ---
 
-## 📌 Présentation du Projet
-Ce projet a été réalisé dans le cadre du **Master SIDI** (Systèmes d'Information Décisionnels et Imagerie) à la Faculté des Sciences et Techniques d'Errachidia. 
+## 📌 Présentation 
 
 Il explore et démontre l'efficacité de la technique **CLAHE** (*Contrast Limited Adaptive Histogram Equalization*) par rapport à l'égalisation d'histogramme classique (HE) pour le rehaussement des radiographies et des IRM, tout en intégrant une **suggestion automatique intelligente (Smart CLAHE)** basée sur l'analyse statistique de l'image.
 
